@@ -3,21 +3,21 @@
 floorContainer::floorContainer(){
 }
 
-bool floorContainer::insertTile(boost::fusion::vector3< double, double, double > tileLocation, dungeonenums::tileType type){
-    floorMap[tileLocation] = type;
+bool floorContainer::insertTile(boost::fusion::vector3< int, int, int > tileLocation, dungeonenums::tileType type){
+    try{
+        floorMap[tileLocation] = type;
+    }
+    catch (std::exception& e){
+        std::cout << "Error Generated when adding tile: " << e.what() << std::endl;
+        return false;
+    }
     return true;
 }
 
-bool floorContainer::clear()
-{
-    floorMap.clear();
-}
-
 bool floorContainer::deleteTile(){
-}
-
-floorContainer::map floorContainer::getMap(){
-    return floorMap;
+//    try {
+//    } catch (...) {
+//    }
 }
 
 floorContainer::~floorContainer(){

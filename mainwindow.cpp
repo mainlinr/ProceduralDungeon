@@ -74,15 +74,8 @@ void MainWindow::on_buttonBox_clicked(QAbstractButton *button){
 //    }
     switch (standardButton){
     case QDialogButtonBox::Ok:
-        if(D2){
-            //2D
             //generate floors
             genFloor();
-        }else{
-            //3D
-            //generate floors
-            genFloor();
-        }
         break;
     case QDialogButtonBox::Reset:
         ui->xDimensionSpinBox->setValue(1);

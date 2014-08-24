@@ -5,6 +5,7 @@
 #include <boost/fusion/container/vector.hpp>
 #include <boost/functional/hash_fwd.hpp>
 #include <dungeonEnums.h>
+#include <exception>
 
 class floorContainer
 {
@@ -32,10 +33,10 @@ public:
     typedef boost::unordered_map< vectorMapKey, dungeonenums::tileType, container_hash< vectorMapKey >, container_equals< vectorMapKey > > map;
 
     floorContainer();
-    bool insertTile( boost::fusion::vector3< double, double, double > tileLocation, dungeonenums::tileType type );
-    bool clear();
+    bool insertTile(boost::fusion::vector3<int, int, int> tileLocation, dungeonenums::tileType type );
+    bool clear(){ floorMap.clear(); }
     bool deleteTile();
-    map getMap();
+    map getMap(){ return floorMap; }
     ~floorContainer();
 private:
     dungeonenums::tileType tile;
