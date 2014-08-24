@@ -6,6 +6,9 @@ class dungeonenums
 public:
     enum tileType{
         UNSET,
+        ENTERANCE_WITH_FLOOR,
+        ENTERANCE_WITHOUT_FLOOR,
+        EXIT,
         EMPTY_SPACE,
         DOOR_RIGHT,
         DOOR_LEFT,
